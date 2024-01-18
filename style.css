@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap');
 
 :root{
     --font-family: 'Montserrat', sans-serif;
@@ -38,22 +38,27 @@ body{
 
 header{
     background-color: #ffffff00;
-    height: 3vh;
+    height: 0vh;
     display: flex;
     flex-direction: row;
     justify-content: left;
     text-align: center;
-    margin: 1em;
-    padding: 0.5em;
+    margin: 0em;
+    padding: 0em;
     font-family: var(--font-family);
-    font-size: 1.5em;
+    font-size: 0em;
     color: #ffffff00;
     border-radius: 8px;
+    font-weight: 600;
 }
 
 [started = "yes"] header{
     color: var(--bg-color);
     background-color: var(--primary-color);
+    margin: 1em;
+    padding: 0.5em;
+    height: 3vh;
+    font-size: 1.5em;
 }
 
 [started = "finished"] header{
