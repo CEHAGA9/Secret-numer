@@ -16,7 +16,8 @@ function começarJogo(){
 recognition.addEventListener('result', onSpeak)
 
 function onSpeak(e) {
-    chute = e.results[0][0].transcript
+    resultado = e.results[0][0].transcript
+    chute = resultado.replace(/.$/, '')
     exibeChuteNaTela(chute)
     verificaSeOChutePossuiUmValorValido(chute)
 }
