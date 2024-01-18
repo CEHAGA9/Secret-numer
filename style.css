@@ -65,7 +65,7 @@ header{
 }
 
 section {
-    background-color: var(--bg-color);
+    background-color: #00000000;
     color: var(--primary-color);
     min-height: 97vh;
     display: flex;
