@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" player="blue">
+<html lang="pt-br" player="blue" started="no">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,16 +10,28 @@
     <title>Número Secreto</title>
 </head>
 <body>
-    <h1>Acerte o número secreto</h1>
 
-    <h3>O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
+    <header id="header">
+        <h5 class="textoIndicadorJogador"><i class="fa-regular fa-user"></i> Jogador 1</h5>
+    </header>
+    <section id="game">
+        <h1>Acerte o número secreto</h1>
 
-    <div id="chute" class="mensagem">
-        
-    </div>
-
+        <h3>O número secreto está entre <span id="menor-valor">0</span> e <span id="maior-valor">100</span></h3>
+    
+        <div id="chute" class="mensagem">
+            <div>Selecione o número de jogadores:</div>
+            <button class="box" id="oneplayer">1</button>
+            <button class="box" id="twoplayers">2</button>
+            <button class="box" id="threeplayers">3</button>
+            <button class="box" id="fourplayers">4</button>
+        </div>
+    </section>
+   
     <script src="app/sortearNumero.js"></script>
+    <script src="app/jogadores.js"></script>
     <script src="app/reconhecimentoDeVoz.js"></script>
     <script src="app/validacao.js"></script>
+
 </body>
 </html>

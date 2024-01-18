@@ -1,10 +1,17 @@
 const elementoChute = document.getElementById('chute')
-
 window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 
 const recognition = new SpeechRecognition();
 recognition.lang = 'pt-Br'
-recognition.start()
+
+function começarJogo(){
+    recognition.start()
+    elementoChute.innerHTML = `
+        <div>Fale o número</div>
+        <span class="box"><i class="fa-solid fa-microphone"></i></span>
+     `
+    html.setAttribute('started', 'yes')
+}
 
 recognition.addEventListener('result', onSpeak)
 

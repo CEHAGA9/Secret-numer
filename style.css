@@ -1,39 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
-[player = "blue"] {
+:root{
     --font-family: 'Montserrat', sans-serif;
+}
+
+[player = "blue"]{
     --bg-color: #0AA1DD;
     --primary-color: #E8F9FD;
 }
 
 [player = "red"] {
     --font-family: 'Montserrat', sans-serif;
-    --bg-color: #f64639;
+    --bg-color: #dd2a0a;
     --primary-color: #ffe6e6;
 }
 
 [player = "green"] {
     --font-family: 'Montserrat', sans-serif;
-    --bg-color: #17f90f;
-    --primary-color: #e1ffe0;
+    --bg-color: #29be12;
+    --primary-color: #ffffff;
 }
 
 [player = "purple"] {
     --font-family: 'Montserrat', sans-serif;
-    --bg-color: #ae12de;
+    --bg-color: #9d15c6;
     --primary-color: #fcdfff;
 }
 
 *{
     font-family: var(--font-family);
+    transition: 0.5s;
 }
 
+body{
+    background-color: var(--bg-color);
+}
 
+header{
+    background-color: #ffffff00;
+    height: 3vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: center;
+    margin: 1em;
+    padding: 0.5em;
+    font-family: var(--font-family);
+    font-size: 1.5em;
+    color: #ffffff00;
+    border-radius: 8px;
+}
 
-body {
+[started = "yes"] header{
+    color: var(--bg-color);
+    background-color: var(--primary-color);
+}
+
+[started = "finished"] header{
+    height: 0vh;
+    padding: 0em;
+    margin: 0em;
+    font-size: 0em;
+    background-color: #ffffff00;
+}
+
+section {
     background-color: var(--bg-color);
     color: var(--primary-color);
-    min-height: 100vh;
+    min-height: 97vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +75,6 @@ body {
     text-align: center;
     margin: 0;
     font-family: var(--font-family);
-    transition: 1s;
 }
 
 h1 {
@@ -61,6 +94,7 @@ h3 {
     margin-top: 20px;
     color: var(--primary-color);
     font-size: 1.6em;
+    cursor: pointer;
 }
 
 .mensagem {
@@ -75,5 +109,16 @@ h3 {
     padding: 10px;
     margin: 20px;
     border-radius: 8px;
-    
+}
+
+#twoplayers, #threeplayers, #fourplayers, #oneplayer {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+#twoplayers:hover, #threeplayers:hover, #fourplayers:hover, #oneplayer:hover, .btn-jogar:hover{
+    border: 3px solid var(--primary-color);
+    padding: 10px 17px;
+    box-shadow: var(--primary-color) 0px 0px 100px -10px; 
 }

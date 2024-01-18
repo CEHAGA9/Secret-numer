@@ -1,5 +1,6 @@
 const html = document.querySelector('html')
-let playernumber = 1;
+const game = document.getElementById('game')
+const header = document.getElementById('header')
 
 function verificaSeOChutePossuiUmValorValido(chute) {
     const numero = +chute
@@ -30,12 +31,16 @@ function verificaSeOChutePossuiUmValorValido(chute) {
     }
 
     if (numero === numeroSecreto) {
-        document.body.innerHTML = `
+        game.innerHTML = `
             <h2>Você acertou!</h2>
             <h3>O número secreto era ${numeroSecreto}</h3>
+            <span class="box"><i class="fa-solid fa-award"></i> Jogador ${playernumber}</span>
 
             <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
         `
+        header.innerHTML = ` `
+        html.setAttribute('started', 'finished')
+
     } else if (numero > numeroSecreto) {
         elementoChute.innerHTML += `
         <div>O número secreto é menor <i class="fa-solid fa-down-long"></i></div>
@@ -56,26 +61,6 @@ function chuteForInvalido(numero) {
 
 function numeroForMaiorOuMenorQueOValorPermitido(numero){
     return numero > maiorValor || numero < menorValor
-}
-
-
-function mudarPlayer(){
-    if(playernumber == 1){
-        html.setAttribute('player', 'red')
-        playernumber = 2
-    }
-    else if(playernumber == 2){
-        html.setAttribute('player', 'blue')
-        playernumber = 3
-    }
-    else if(playernumber == 3){
-        html.setAttribute('player', 'green')
-        playernumber = 4
-    }
-    else if(playernumber == 4){
-        html.setAttribute('player', 'purple')
-        playernumber = 1
-    }
 }
 
 document.body.addEventListener('click', e => {
